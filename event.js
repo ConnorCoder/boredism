@@ -89,7 +89,7 @@ function repeat() { //Save the game and display the last save
 		document.getElementById("pointsps").style.display = "block";
 	}
 }
-setInterval(repeat, 1000);
+setInterval(repeat, 0);
 
 function pps() {
 	game.points += game.pointsps;
