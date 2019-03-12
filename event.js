@@ -53,7 +53,7 @@ function upgrade(x) { //Upgrade your PPS (points per second)
 }
 
 function hideall() {
-	document.getElementById("pointpc").style.display = "none";
+	document.getElementById("pointspc").style.display = "none";
 	document.getElementById("chance").style.display = "none";
 }
 
