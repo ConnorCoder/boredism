@@ -52,6 +52,12 @@ function upgrade(x) { //Upgrade your PPS (points per second)
     }
 }
 
+function hideall() {
+	document.getElementById("pointpc").style.display = "none";
+	document.getElementById("chance").style.display = "none";
+	document.getElementByid("upgrades").style.display = "none";
+}
+
 function repeat() { //Save the game and display the last save
 	var x = document.getElementById("game-localstorage");
 	savegame();
@@ -60,11 +66,14 @@ function repeat() { //Save the game and display the last save
 	document.getElementById("game-points").innerHTML = "Points: " + game.points;
 	var opt = document.getElementById("select").value;
 	if (opt == 0) {
+		hideall();
 		document.getElementById("pointspc").style.display = "block";
-		document.getElementById("chance").style.display = "none";
 	}else if (opt == 1) {
+		hideall();
 		document.getElementById("chance").style.display = "block";
-		document.getElementById("pointspc").style.display = "none";
+	}else if (opt == 2) {
+		hideall();
+		document.getElementById("upgrades").style.display = "block";
 	}
 }
 setInterval(repeat, 0);
