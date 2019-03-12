@@ -1,4 +1,3 @@
-
 var game = {points: 0, pointspc: 1, chance: 100, pointsps: 0}; //Default Stats
 
 if (localStorage.getItem('points') === null) { //Load Game
@@ -19,7 +18,7 @@ if (localStorage.getItem('chance') === null) {
 if (localStorage.getItem('pointsps') === null) {
 	localStorage.setItem('pointsps', 0);
 }else {
-	game.pointsps = localStorage.getItem('pointsps');
+	game.pointsps = parseInt(localStorage.getItem('pointsps'));
 }
 function reset() {
 	game.points = 0;
@@ -57,6 +56,14 @@ function upgrade(x) { //All Upgrades/Purchases
 	}
 }
 
+function savegame() {
+  localStorage.setItem("pointspc", game.pointspc);
+  localStorage.setItem("pointsps", game.pointsps);
+  localStorage.setItem("chance", game.chance);
+  localStorage.setItem("points", game.points);
+  
+}
+
 function hideall() {
 	document.getElementById("pointspc").style.display = "none";
 	document.getElementById("chance").style.display = "none";
@@ -66,23 +73,23 @@ function hideall() {
 function repeat() { //Save the game and display the last save
 	var x = document.getElementById("game-localstorage");
 	savegame();
-	x.innerHTML = "Last Save: Points = " + localStorage.getItem("points") + ", PointsPc = " + localStorage.getItem("pointspc") + ", Chance = " + localStorage.getItem("chance") + ", PointsPs = " + localStorage.getitem("pointsps");
+	x.innerHTML = "Last Save: Points = " + localStorage.getItem("points") + ", PointsPc = " + localStorage.getItem("pointspc") + ", Chance = " + localStorage.getItem("chance") + ", PointsPs = " + localStorage.getItem("pointsps");
 	document.getElementById("game-pointspc").innerHTML = "Points Per Click: " + game.pointspc;
-	document.getElementById("game-points").innerHTML = "Points: " + game.points;
+    document.getElementById("game-points").innerHTML = "Points: " + game.points;
 	document.getElementById("game-pointsps").innerHTML = "Points Per Second: " + game.pointsps;
 	var opt = document.getElementById("select").value;
-	if (opt == 0) {
+	if (opt === 0) {
 		hideall();
 		document.getElementById("pointspc").style.display = "block";
-	}else if (opt == 1) {
+	}else if (opt === 1) {
 		hideall();
 		document.getElementById("chance").style.display = "block";
-	}else if (opt == 2) {
+	}else if (opt === 2) {
 		hideall();
 		document.getElementById("pointsps").style.display = "block";
 	}
 }
-setInterval(repeat, 0);
+setInterval(repeat, 1000);
 
 function pps() {
 	game.points += game.pointsps;
