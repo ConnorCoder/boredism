@@ -70,7 +70,7 @@ function hideall() {
 	document.getElementById("pointsps").style.display = "none";
 }
 
-function repeat() { //Save the game and display the last save
+function repeat() {
 	var x = document.getElementById("game-localstorage");
 	savegame();
 	x.innerHTML = "Last Save: Points = " + localStorage.getItem("points") + ", PointsPc = " + localStorage.getItem("pointspc") + ", Chance = " + localStorage.getItem("chance") + ", PointsPs = " + localStorage.getItem("pointsps");
