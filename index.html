@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+  <head>
+    <script src="event.js"></script>
+    <title>Boredism</title>
+  </head>
+  <style>
+    body {
+      text-align: center;
+    }
+    .no-use {
+      border:5px solid black;
+      position: absolute;
+      right: 25%;
+      top: 18%;
+      width: 74%;
+      height: 74%;
+    }
+    .no-use2 {
+      border:5px solid black;
+      position: absolute;
+      right: 1%;
+      top: 18%;
+      width: 22%;
+      height: 74%;
+      
+    }
+  </style>
+  <body>
+    <button onclick="reset()" style="position: absolute; right: 50%; bottom: 2%">Reset</button>
+    <select id="select" style="position: absolute; top: 80px; right: 8%">
+      <option value="0">Points Per Click</option>
+      <option value="1">Chance</option>
+    </select>
+    <a style="font-size: 50px" id="game-points">Points: 0</a> <br>
+    <a style="font-size: 25px" id="game-pointspc">Points Per Click: 0</a> <br> <Br>
+    <div class="no-use">
+      <button onclick="btnclick()" style="position: absolute; right: 50%; top: 50%" id="game-btn">Click Here</button> <br>        
+    </div>
+    <div class="no-use2" id="pointspc">
+      <button onclick="upgrade(2)" style="position: relative;">+1 Points Per Click (100 Points)</button> <br>
+      <button onclick="upgrade(3)" style="position: relative;">+10 Points Per Click (1K Points)</button> <br>
+      <button onclick="upgrade(4)" style="position: relative;">+100 Points Per Click (10K Points)</button> <br>
+      <button onclick="upgrade(5)" style="position: relative;">+1K Points Per Click (100K Points)</button> <br>
+      <button onclick="upgrade(6)" style="position: relative;">+10K Points Per Click (1M Points)</button> <br>
+      <button onclick="upgrade(7)" style="position: relative;">+100K Points Per Click (10M Points)</button> <br>    
+      <button onclick="upgrade(8)" style="position: relative;">+1M Points Per Click (100M Points)</button> <br>
+      <button onclick="upgrade(9)" style="position: relative;">+10M Points Per Click (1B Points)</button> <br>
+      <button onclick="upgrade(10)" style="position: relative;">+100M Points Per Click (10B Points)</button> <br>
+      <button onclick="upgrade(11)" style="position: relative;">+1B Points Per Click (100B Points)</button> <br>
+      <button onclick="upgrade(12)" style="position: relative;">+10B Points Per Click (1T Points)</button> <br>
+      <button onclick="upgrade(13)" style="position: relative;">+100B Points Per Click (10T Points)</button> <br>
+      <button onclick="upgrade(14)" style="position: relative;">+1T Points Per Click (100T Points)</button> <br>
+      <button onclick="upgrade(15)" style="position: relative;">+10T Points Per Click (1q Points)</button> <br>
+      <button onclick="upgrade(16)" style="position: relative;">+100T Points Per Click (10q Points)</button> <br>
+      <button onclick="upgrade(17)" style="position: relative;">+1q Points Per Click (100q Points)</button> <br>
+      <button onclick="upgrade(18)" style="position: relative;">+10q Points Per Click (1Q Points)</button> <br>
+    </div>
+    <div class="no-use2" id="chance">
+      <button onclick="upgrade(19)" style="position: relative;">+1 Chance (1M Points)</button> <br>
+      <button onclick="upgrade(20)" style="position: relative;">+10 Chance (10M Points)</button> <br>
+      <button onclick="upgrade(21)" style="position: relative;">+100 Chance (100M Points)</button> <br>
+    </div>
+    <a id="game-localstorage" style="position: absolute; left: 5%; bottom: 2%"></a>
+  </body>
+</html>
