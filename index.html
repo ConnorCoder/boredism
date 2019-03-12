@@ -30,6 +30,7 @@
     <select id="select" style="position: absolute; top: 80px; right: 8%">
       <option value="0">Points Per Click</option>
       <option value="1">Chance</option>
+      <option value="2">Points Per Second</option>
     </select>
     <a style="font-size: 50px" id="game-points">Points: 0</a> <br>
     <a style="font-size: 25px" id="game-pointspc">Points Per Click: 0</a> <br> <Br>
@@ -59,6 +60,17 @@
       <button onclick="upgrade(19)" style="position: relative;">+1 Chance (1M Points)</button> <br>
       <button onclick="upgrade(20)" style="position: relative;">+10 Chance (10M Points)</button> <br>
       <button onclick="upgrade(21)" style="position: relative;">+100 Chance (100M Points)</button> <br>
+    </div>
+    <div class="no-use2" id="pointsps">
+      <button onclick="upgrade(22)" style="position: relative;">+1 Points Per Second (1K Points)</button> <br>
+      <button onclick="upgrade(23)" style="position: relative;">+10 Points Per Second (10K Points)</button> <br>
+      <button onclick="upgrade(24)" style="position: relative;">+100 Points Per Second (100K Points)</button> <br>
+      <button onclick="upgrade(25)" style="position: relative;">+1K Points Per Second (1M Points)</button> <br>
+      <button onclick="upgrade(26)" style="position: relative;">+10K Points Per Second (10M Points)</button> <br>
+      <button onclick="upgrade(27)" style="position: relative;">+100K Points Per Second (100M Points)</button> <br>
+      <button onclick="upgrade(28)" style="position: relative;">+1M Points Per Second (1B Points)</button> <br>
+      <button onclick="upgrade(29)" style="position: relative;">+10M Points Per Second (10B Points)</button> <br>
+      <button onclick="upgrade(30)" style="position: relative;">+100M Points Per Second (100B Points)</button> <br>
     </div>
     <a id="game-localstorage" style="position: absolute; left: 5%; bottom: 2%"></a>
   </body>
