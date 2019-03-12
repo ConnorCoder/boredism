@@ -16,7 +16,7 @@ if (localStorage.getItem('chance') === null) {
 }else {
 	game.chance = parseInt(localStorage.getItem('chance'));
 }
-if (localStorage.getitem('pointsps') === null) {
+if (localStorage.getItem('pointsps') === null) {
 	localStorage.setItem('pointsps', 0);
 }else {
 	game.pointsps = localStorage.getItem('pointsps');
