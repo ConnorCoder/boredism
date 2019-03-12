@@ -78,13 +78,13 @@ function repeat() { //Save the game and display the last save
     document.getElementById("game-points").innerHTML = "Points: " + game.points;
 	document.getElementById("game-pointsps").innerHTML = "Points Per Second: " + game.pointsps;
 	var opt = document.getElementById("select").value;
-	if (opt == 0) {
+	if (opt == parseInt(0)) {
 		hideall();
 		document.getElementById("pointspc").style.display = "block";
-	}else if (opt == 1) {
+	}else if (opt == parseInt(1)) {
 		hideall();
 		document.getElementById("chance").style.display = "block";
-	}else if (opt == 2) {
+	}else if (opt == parseInt(2)) {
 		hideall();
 		document.getElementById("pointsps").style.display = "block";
 	}
