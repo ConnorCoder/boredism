@@ -55,7 +55,6 @@ function upgrade(x) { //Upgrade your PPS (points per second)
 function hideall() {
 	document.getElementById("pointpc").style.display = "none";
 	document.getElementById("chance").style.display = "none";
-	document.getElementByid("upgrades").style.display = "none";
 }
 
 function repeat() { //Save the game and display the last save
@@ -71,9 +70,6 @@ function repeat() { //Save the game and display the last save
 	}else if (opt == 1) {
 		hideall();
 		document.getElementById("chance").style.display = "block";
-	}else if (opt == 2) {
-		hideall();
-		document.getElementById("upgrades").style.display = "block";
 	}
 }
 setInterval(repeat, 0);
