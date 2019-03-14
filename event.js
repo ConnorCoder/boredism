@@ -27,7 +27,7 @@ if (localStorage.getItem('time') === null) {
 	game.time = parseInt(localStorage.getItem('time'));
 	var x = new Date();
 	var y = Math.floor(x.getTime() / 1000);
-	game.points += y * game.pointsps;
+	game.points += (y - game.time) * game.pointsps;
 }
 function reset() {
 	game.points = 0;
