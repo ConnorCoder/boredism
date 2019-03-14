@@ -55,7 +55,7 @@ function upgrade(x) { //All Upgrades/Purchases
 		}
 	}else if (x < 22) {
       		if (game.points >= Math.pow(10, x - 13)) {
-        		game.chance -= Math.pow(10, x - 19);
+        		game.chance -= Math.pow(10, x - 20);
         		game.points -= Math.pow(10, x - 13);
       		}
     	}else if (x < 31) {
