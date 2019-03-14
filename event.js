@@ -37,7 +37,7 @@ function reset() {
 	game.time = 0;
 }
 function btnclick() { //Function ran when button is clicked
-	var rand = Math.floor(Math.random() * game.chance);
+	var rand = Math.floor(Math.random() * game.chance) + 1;
 	var btn = document.getElementById("game-btn");
 	game.points += game.pointspc;
 	if (rand !== 1) {
