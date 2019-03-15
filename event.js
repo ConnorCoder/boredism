@@ -92,7 +92,7 @@ function hideall() {
 	document.getElementById("pointsps").style.display = "none";
 }
 function backg(x) {
-	document.getElementById("").style.backgroundColor = x;
+	document.getElementsByClassName("no-use")[0].style.backgroundColor = x;
 }
 
 function repeat() {
