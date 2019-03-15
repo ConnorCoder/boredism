@@ -123,6 +123,10 @@ function repeat() {
 		backg("green");
 	}else if (game.total < 100000000000000) {
 		backg("blue");
+	}else if (game.total < 100000000000000000) {
+		backg("purple");
+	}else if (game.total < 100000000000000000000) {
+		backg("gold");
 	}
 }
 setInterval(repeat, 0);
