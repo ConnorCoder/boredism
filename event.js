@@ -1,4 +1,4 @@
-var game = {points: 0, pointspc: 1, chance: 100, pointsps: 0, time: 0}; //Default Stats
+var game = {points: 0, pointspc: 1, chance: 100, pointsps: 0, time: 0, total: 0}; //Default Stats
 
 if (localStorage.getItem('points') === null) { //Load Game
 	localStorage.setItem('points', 0);
@@ -20,6 +20,11 @@ if (localStorage.getItem('pointsps') === null) {
 }else {
 	game.pointsps = parseInt(localStorage.getItem('pointsps'));
 }
+if (localStorage.getItem('total') === null) {
+	localStorage.setItem('total', 0);
+}else {
+	game.total = parseInt(localStorage.getItem('total'));
+}
 if (localStorage.getItem('time') === null) {
 	var today = new Date();
 	localStorage.setItem('time', Math.floor(today.getTime() / 1000));
@@ -28,6 +33,7 @@ if (localStorage.getItem('time') === null) {
 	var x = new Date();
 	var y = Math.floor(x.getTime() / 1000);
 	game.points += (y - game.time) * game.pointsps;
+	game.total += (y - game.time) * game.pointsps;
 }
 function reset() {
 	game.points = 0;
@@ -35,11 +41,13 @@ function reset() {
 	game.chance = 100;
 	game.pointsps = 0;
 	game.time = 0;
+	game.total = 0;
 }
 function btnclick() { //Function ran when button is clicked
 	var rand = Math.floor(Math.random() * game.chance) + 1;
 	var btn = document.getElementById("game-btn");
 	game.points += game.pointspc;
+	game.total += game.pointspc;
 	if (rand !== 1) {
   		var random = Math.floor(Math.random() * 76) + 10;
   		var random2 = Math.floor(Math.random() * 86) + 5;
@@ -74,6 +82,7 @@ function savegame() {
 	var x = new Date();
 	var y = Math.floor(x.getTime() / 1000);
 	localStorage.setItem("time", y);
+	localStorage.setItem("total", game.total);
   
 }
 
@@ -82,11 +91,14 @@ function hideall() {
 	document.getElementById("chance").style.display = "none";
 	document.getElementById("pointsps").style.display = "none";
 }
+function backg(x) {
+	document.getElementById("").style.backgroundColor = x;
+}
 
 function repeat() {
 	var x = document.getElementById("game-localstorage");
 	savegame();
-	x.innerHTML = "Last Save: Points = " + localStorage.getItem("points") + ", PointsPc = " + localStorage.getItem("pointspc") + ", Chance = " + localStorage.getItem("chance") + ", PointsPs = " + localStorage.getItem("pointsps") + ", Time = " + localStorage.getItem("time");
+	x.innerHTML = "Last Save: Points = " + localStorage.getItem("points") + ", PointsPc = " + localStorage.getItem("pointspc") + ", Chance = " + localStorage.getItem("chance") + ", PointsPs = " + localStorage.getItem("pointsps") + ", Time = " + localStorage.getItem("time") + ", Total = " + localStorage.getItem('total');
 	document.getElementById("game-pointspc").innerHTML = "Points Per Click: " + game.pointspc;
     	document.getElementById("game-points").innerHTML = "Points: " + game.points;
 	document.getElementById("game-pointsps").innerHTML = "Points Per Second: " + game.pointsps;
@@ -101,10 +113,18 @@ function repeat() {
 		hideall();
 		document.getElementById("pointsps").style.display = "block";
 	}
+	if (game.total < 100) {
+		backg("red");
+	}else if (game.total < 100000) {
+		backg("orange");
+	}else if (game.total < 100000000) {
+		backg("yellow");
+	}
 }
 setInterval(repeat, 0);
 
 function pps() {
 	game.points += game.pointsps;
+	game.total += game.pointsps;
 }
 setInterval(pps, 1000);
