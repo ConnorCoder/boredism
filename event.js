@@ -119,6 +119,10 @@ function repeat() {
 		backg("orange");
 	}else if (game.total < 100000000) {
 		backg("yellow");
+	}else if (game.total < 100000000000) {
+		backg("green");
+	}else if (game.total < 100000000000000) {
+		backg("blue");
 	}
 }
 setInterval(repeat, 0);
