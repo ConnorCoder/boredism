@@ -55,7 +55,7 @@ function newpos() {
   	var random2 = Math.floor(Math.random() * 86) + 5;
   	btn.style.right = random + "%";
   	btn.style.top = random2 + "%";
-}
+} newpos(); alert();
 
 function btnclick() { //Function ran when button is clicked
 	var rand = Math.floor(Math.random() * game.chance) + 1;
@@ -148,7 +148,6 @@ function pps() {
 	game.total += game.pointsps;
 }
 setInterval(pps, 1000);
-newpos();
 
 function code() {
 	var x = prompt("Enter Code:", "");
