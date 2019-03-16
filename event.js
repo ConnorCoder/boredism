@@ -1,3 +1,4 @@
+var btn = document.getElementById("game-btn");
 var random = Math.floor(Math.random() * 76) + 10;
 var random2 = Math.floor(Math.random() * 86) + 5;
 btn.style.right = random + "%";
