@@ -148,6 +148,7 @@ function pps() {
 	game.total += game.pointsps;
 }
 setInterval(pps, 1000);
+newpos();
 
 function code() {
 	var x = prompt("Enter Code:", "");
@@ -168,5 +169,3 @@ function code() {
 		}
 	}
 }
-newpos();
-alert();
