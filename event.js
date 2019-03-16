@@ -1,9 +1,3 @@
-var btn = document.getElementById("game-btn");
-var random = Math.floor(Math.random() * 76) + 10;
-var random2 = Math.floor(Math.random() * 86) + 5;
-btn.style.right = random + "%";
-btn.style.top = random2 + "%";
-
 var game = {points: 0, pointspc: 1, chance: 100, pointsps: 0, time: 0, total: 0, codes: "00"}; //Default Stats
 
 if (localStorage.getItem('points') === null) { //Load Game
@@ -169,3 +163,8 @@ function code() {
 		}
 	}
 }
+var btn = document.getElementById("game-btn");
+var random = Math.floor(Math.random() * 76) + 10;
+var random2 = Math.floor(Math.random() * 86) + 5;
+btn.style.right = random + "%";
+btn.style.top = random2 + "%";
