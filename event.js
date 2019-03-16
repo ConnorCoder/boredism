@@ -169,3 +169,4 @@ function code() {
 	}
 }
 newpos();
+alert();
