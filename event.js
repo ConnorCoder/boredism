@@ -1,4 +1,4 @@
-var game = {points: 0, pointspc: 1, chance: 100, pointsps: 0, time: 0, total: 0}; //Default Stats
+var game = {points: 0, pointspc: 1, chance: 100, pointsps: 0, time: 0, total: 0, codes: "00"}; //Default Stats
 
 if (localStorage.getItem('points') === null) { //Load Game
 	localStorage.setItem('points', 0);
@@ -35,6 +35,11 @@ if (localStorage.getItem('time') === null) {
 	game.points += (y - game.time) * game.pointsps;
 	game.total += (y - game.time) * game.pointsps;
 }
+if (localStorage.getItem('codes') === null) {
+	localStorage.setItem('codes', "00");
+}else {
+	game.codes = localStorage.getItem('codes');
+}
 function reset() {
 	game.points = 0;
 	game.pointspc = 1;
@@ -42,6 +47,7 @@ function reset() {
 	game.pointsps = 0;
 	game.time = 0;
 	game.total = 0;
+	game.codes = "00";
 }
 function btnclick() { //Function ran when button is clicked
 	var rand = Math.floor(Math.random() * game.chance) + 1;
@@ -83,6 +89,7 @@ function savegame() {
 	var y = Math.floor(x.getTime() / 1000);
 	localStorage.setItem("time", y);
 	localStorage.setItem("total", game.total);
+	localStorage.setItem("codes", game.codes);
   
 }
 
@@ -136,3 +143,23 @@ function pps() {
 	game.total += game.pointsps;
 }
 setInterval(pps, 1000);
+
+function code() {
+	var x = prompt("Enter Code:", "");
+	if (x == "H4CK3R") {
+		if (game.codes[0] == "0") {
+			game.codes = "1" + game.codes[1];
+			game.pointsps += 100000000;
+		}else {
+			alert("Already Redeemed!");
+		}
+	}
+	if (x == "R41NB0W") {
+		if (game.codes[1] == "0") {
+			game.codes = game.codes[0] + "1";
+			game.pointspc += 123456789;
+		}else {
+			alert("Already Redeemed!");
+		}
+	}
+}
