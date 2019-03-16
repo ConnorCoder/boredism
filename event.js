@@ -55,7 +55,8 @@ function newpos() {
   	var random2 = Math.floor(Math.random() * 86) + 5;
   	btn.style.right = random + "%";
   	btn.style.top = random2 + "%";
-} newpos(); alert();
+}
+var np = newpos(); //Github Wont run the function when its alone
 
 function btnclick() { //Function ran when button is clicked
 	var rand = Math.floor(Math.random() * game.chance) + 1;
