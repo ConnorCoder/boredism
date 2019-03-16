@@ -49,16 +49,21 @@ function reset() {
 	game.total = 0;
 	game.codes = "00";
 }
+function newpos() {
+	var btn = document.getElementById("game-btn");
+  	var random = Math.floor(Math.random() * 76) + 10;
+  	var random2 = Math.floor(Math.random() * 86) + 5;
+  	btn.style.right = random + "%";
+  	btn.style.top = random2 + "%";
+}
+
 function btnclick() { //Function ran when button is clicked
 	var rand = Math.floor(Math.random() * game.chance) + 1;
 	var btn = document.getElementById("game-btn");
 	game.points += game.pointspc;
 	game.total += game.pointspc;
 	if (rand !== 1) {
-  		var random = Math.floor(Math.random() * 76) + 10;
-  		var random2 = Math.floor(Math.random() * 86) + 5;
-  		btn.style.right = random + "%";
-  		btn.style.top = random2 + "%";
+		newpos();
 	}
 }
 function upgrade(x) { //All Upgrades/Purchases
@@ -163,8 +168,4 @@ function code() {
 		}
 	}
 }
-var btn = document.getElementById("game-btn");
-var random = Math.floor(Math.random() * 76) + 10;
-var random2 = Math.floor(Math.random() * 86) + 5;
-btn.style.right = random + "%";
-btn.style.top = random2 + "%";
+newpos();
