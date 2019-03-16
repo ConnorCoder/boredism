@@ -56,7 +56,7 @@ function newpos() {
   	btn.style.right = random + "%";
   	btn.style.top = random2 + "%";
 }
-var np = newpos(); //Github Wont run the function when its alone
+// ATTEMPT TO FIX RELOAD CHEAT: var np = newpos(); //Github Wont run the function when its alone
 
 function btnclick() { //Function ran when button is clicked
 	var rand = Math.floor(Math.random() * game.chance) + 1;
