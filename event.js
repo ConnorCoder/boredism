@@ -43,7 +43,7 @@ if (localStorage.getItem('time') === null) {
 	var gained = (y - game.time) * game.pointsps;
 	game.points += gained;
 	game.total += gained;
-	alert("You gained " + gained + " points while you were gone!");
+	//alert("You gained " + gained + " points while you were gone!");
 }
 if (localStorage.getItem('codes') === null) {
 	localStorage.setItem('codes', "00");
