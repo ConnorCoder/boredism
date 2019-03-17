@@ -1,9 +1,18 @@
 var game = {points: 0, pointspc: 1, chance: 100, pointsps: 0, time: 0, total: 0, codes: "00"}; //Default Stats
 
+function newpos() {
+	var btn = document.getElementById("game-btn");
+  	var random = Math.floor(Math.random() * 76) + 10;
+  	var random2 = Math.floor(Math.random() * 86) + 5;
+  	btn.style.right = random + "%";
+  	btn.style.top = random2 + "%";
+}
+
 if (localStorage.getItem('points') === null) { //Load Game
 	localStorage.setItem('points', 0);
 }else {
 	game.points = parseInt(localStorage.getItem('points'));
+	newpos();
 }
 if (localStorage.getItem('pointspc') === null) {
 	localStorage.setItem('pointspc', 1);
@@ -49,14 +58,6 @@ function reset() {
 	game.total = 0;
 	game.codes = "00";
 }
-function newpos() {
-	var btn = document.getElementById("game-btn");
-  	var random = Math.floor(Math.random() * 76) + 10;
-  	var random2 = Math.floor(Math.random() * 86) + 5;
-  	btn.style.right = random + "%";
-  	btn.style.top = random2 + "%";
-}
-// ATTEMPT TO FIX RELOAD CHEAT: var np = newpos(); //Github Wont run the function when its alone
 
 function btnclick() { //Function ran when button is clicked
 	var rand = Math.floor(Math.random() * game.chance) + 1;
