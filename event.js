@@ -171,4 +171,10 @@ function code() {
 		}
 	}
 }
-alert("Test");
+var xdelay = 0;
+function delay() {
+	if (xdelay == 0) {
+		newpos();
+		xdelay++;
+	}
+} setInterval(delay, 0);
