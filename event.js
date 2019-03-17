@@ -12,7 +12,6 @@ if (localStorage.getItem('points') === null) { //Load Game
 	localStorage.setItem('points', 0);
 }else {
 	game.points = parseInt(localStorage.getItem('points'));
-	newpos();
 }
 if (localStorage.getItem('pointspc') === null) {
 	localStorage.setItem('pointspc', 1);
