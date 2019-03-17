@@ -1,5 +1,4 @@
 var game = {points: 0, pointspc: 1, chance: 100, pointsps: 0, time: 0, total: 0, codes: "00"}; //Default Stats
-alert("Test");
 
 function newpos() {
 	var btn = document.getElementById("game-btn");
@@ -41,8 +40,10 @@ if (localStorage.getItem('time') === null) {
 	game.time = parseInt(localStorage.getItem('time'));
 	var x = new Date();
 	var y = Math.floor(x.getTime() / 1000);
-	game.points += (y - game.time) * game.pointsps;
-	game.total += (y - game.time) * game.pointsps;
+	var gained = (y - game.time) * game.pointsps;
+	game.points += gained;
+	game.total += gained;
+	alert("You gained " + gained + " points while you were gone!");
 }
 if (localStorage.getItem('codes') === null) {
 	localStorage.setItem('codes', "00");
