@@ -1,4 +1,5 @@
 var game = {points: 0, pointspc: 1, chance: 100, pointsps: 0, time: 0, total: 0, codes: "00"}; //Default Stats
+alert("Test");
 
 function newpos() {
 	var btn = document.getElementById("game-btn");
